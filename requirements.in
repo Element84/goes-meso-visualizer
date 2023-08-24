@@ -1,3 +1,6 @@
-ipykernel
+contextily
 geopandas
+ipykernel
+matplotlib
 pystac-client
+shapely
