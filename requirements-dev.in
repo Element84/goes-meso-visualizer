@@ -1,0 +1,3 @@
+black[jupyter]
+pip-tools
+pre-commit
