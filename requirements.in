@@ -4,3 +4,4 @@ ipykernel
 matplotlib
 pystac-client
 shapely
+stac-asset[cli]

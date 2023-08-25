@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+set -e
+
+stac-asset download data/sentinel-2-l2a.json assets --file-name=sentinel-2-l2a.json
+stac-asset download data/sentinel-1-grd.json assets --file-name=sentinel-1-grd.json
