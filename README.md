@@ -17,4 +17,8 @@ pip install -r requirements-dev.txt
 pre-commit install
 ```
 
-If you need a new requirement, add it to `requirements.in`, then run the command that's called out in the top comment of `requirements.txt`.
+If you need a new requirement, add it to `requirements.in`, then:
+
+```shell
+scripts/update-requirements
+```
