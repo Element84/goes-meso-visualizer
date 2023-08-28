@@ -2,6 +2,10 @@
 
 set -e
 
+scripts=$(dirname "$0")
+root=$(dirname "$scripts")
+
 mkdir -p assets
-stac-asset download data/sentinel-2-l2a.json assets --file-name=sentinel-2-l2a.json --s3-requester-pays
-stac-asset download data/sentinel-1-grd.json assets --file-name=sentinel-1-grd.json --s3-requester-pays
+# stac-asset download "$root"/data/sentinel-2-l2a.json "$root"/assets --file-name=sentinel-2-l2a.json --s3-requester-pays
+# stac-asset download "$root"/data/sentinel-1-grd.json "$root"/assets --file-name=sentinel-1-grd.json --s3-requester-pays
+stac-asset download "$root"/data/goes-cmi.json "$root"/assets --file-name=goes-cmi.json -i C01_2km -i C02_2km -i C03_2km

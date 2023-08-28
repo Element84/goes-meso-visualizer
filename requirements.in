@@ -1,7 +1,11 @@
+click
 contextily
 geopandas
 ipykernel
 matplotlib
+pyproj
 pystac-client
+rioxarray
 shapely
 stac-asset[cli]
+xarray
