@@ -1,7 +1,9 @@
 click
 contextily
+geojson
 geopandas
 ipykernel
+jinja2
 matplotlib
 pyproj
 pysolar

@@ -1,0 +1,235 @@
+{
+    "type": "FeatureCollection",
+    "name": "EP092023_lin",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "TS",
+                "SS": 0.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -102.5,
+                        12.7
+                    ],
+                    [
+                        -103.8,
+                        13.0
+                    ],
+                    [
+                        -104.8,
+                        13.6
+                    ],
+                    [
+                        -105.9,
+                        14.5
+                    ],
+                    [
+                        -107.2,
+                        15.2
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 1.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -107.2,
+                        15.2
+                    ],
+                    [
+                        -108.4,
+                        15.8
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 2.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -108.4,
+                        15.8
+                    ],
+                    [
+                        -109.5,
+                        16.4
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 3.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -109.5,
+                        16.4
+                    ],
+                    [
+                        -110.4,
+                        16.8
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 4.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -110.4,
+                        16.8
+                    ],
+                    [
+                        -111.1,
+                        17.4
+                    ],
+                    [
+                        -111.9,
+                        18.2
+                    ],
+                    [
+                        -112.4,
+                        19.2
+                    ],
+                    [
+                        -113.0,
+                        20.2
+                    ],
+                    [
+                        -113.3,
+                        21.5
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 3.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -113.3,
+                        21.5
+                    ],
+                    [
+                        -113.9,
+                        22.9
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 2.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -113.9,
+                        22.9
+                    ],
+                    [
+                        -114.3,
+                        24.3
+                    ],
+                    [
+                        -114.9,
+                        26.3
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 1.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -114.9,
+                        26.3
+                    ],
+                    [
+                        -115.4,
+                        28.2
+                    ],
+                    [
+                        -115.8,
+                        30.1
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STORMNUM": 9.0,
+                "STORMTYPE": "HU",
+                "SS": 1.0
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.8,
+                        30.1
+                    ],
+                    [
+                        -117.6,
+                        33.6
+                    ],
+                    [
+                        -118.0,
+                        36.1
+                    ]
+                ]
+            }
+        }
+    ]
+}

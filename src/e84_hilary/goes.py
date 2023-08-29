@@ -1,4 +1,5 @@
 import datetime
+from typing import Optional
 
 import shapely.geometry
 import tqdm
@@ -11,12 +12,12 @@ from . import shapes
 from .constants import DISSIPATED, FORMED
 
 
-def search() -> ItemCollection:
+def search(max_items: Optional[int] = None) -> ItemCollection:
     """Search the Planetary Computer's GOES collection for the assets we need."""
     planetary_computer = Client.open(
         "https://planetarycomputer.microsoft.com/api/stac/v1"
     )
-    la_county = shapes.la_county()
+    shape = shapes.ep092023_best_track()
     hours = list(rrule.rrule(HOURLY, dtstart=FORMED, until=DISSIPATED))
     items = list()
     for dt in tqdm.tqdm(hours):
@@ -28,7 +29,9 @@ def search() -> ItemCollection:
             sortby="+datetime",
         )
         for item in search.items():
-            if la_county.intersects(shapely.geometry.shape(item.geometry)):
+            if shape.intersects(shapely.geometry.shape(item.geometry)):
                 items.append(item)
                 break
+        if max_items and len(items) >= max_items:
+            break
     return ItemCollection(items)
