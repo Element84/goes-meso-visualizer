@@ -139,6 +139,7 @@ numpy==1.25.2
     #   contourpy
     #   matplotlib
     #   pandas
+    #   pysolar
     #   rasterio
     #   rioxarray
     #   shapely
@@ -188,6 +189,8 @@ pyproj==3.6.0
     #   rioxarray
 pyrsistent==0.19.3
     # via jsonschema
+pysolar==0.11
+    # via -r requirements.in
 pystac==1.8.3
     # via
     #   pystac-client
@@ -196,6 +199,7 @@ pystac-client==0.7.3
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
+    #   -r requirements.in
     #   botocore
     #   jupyter-client
     #   matplotlib
@@ -241,7 +245,9 @@ tornado==6.3.3
     #   ipykernel
     #   jupyter-client
 tqdm==4.66.1
-    # via stac-asset
+    # via
+    #   -r requirements.in
+    #   stac-asset
 traitlets==5.9.0
     # via
     #   comm

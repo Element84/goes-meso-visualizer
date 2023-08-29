@@ -4,8 +4,11 @@ geopandas
 ipykernel
 matplotlib
 pyproj
+pysolar
 pystac-client
+python-dateutil
 rioxarray
 shapely
 stac-asset[cli]
+tqdm
 xarray

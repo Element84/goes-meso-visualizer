@@ -5,6 +5,13 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v1.5.1"
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - click
+          - types-python-dateutil
   - repo: https://github.com/psf/black
     rev: 23.7.0
     hooks:

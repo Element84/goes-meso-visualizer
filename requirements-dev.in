@@ -1,3 +1,6 @@
 black[jupyter]
+mypy
 pip-tools
 pre-commit
+ruff
+types-python-dateutil

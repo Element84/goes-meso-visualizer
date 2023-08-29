@@ -5,19 +5,31 @@ A demonstration of flood analysis after the August 2023 hurricane that struck Ca
 ## Running
 
 ```shell
-pip install -r requirements.txt
+git clone https://github.com/Element84/2023-08-Hilary
+cd 2023-08-Hilary
+pip install .
 ```
 
-Then, run the notebook.
+Then download and build all of the assets:
+
+```shell
+e84-hilary download-and-build assets
+```
+
+To serve the website:
+
+```shell
+e84-hilary serve assets
+```
 
 ## Developing
 
 ```shell
-pip install -r requirements-dev.txt
+pip install -e '.[dev]'
 pre-commit install
 ```
 
-If you need a new requirement, add it to `requirements.in`, then:
+If you need a new requirement, add it to `requirements.in` (or `requirements-dev.in` for dev requirements), then:
 
 ```shell
 scripts/update-requirements
