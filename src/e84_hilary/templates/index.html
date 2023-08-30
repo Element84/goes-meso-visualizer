@@ -52,7 +52,7 @@
                 currentImage = (currentImage + 1) % frameCount;
                 map.setLayoutProperty(`layer-${ currentImage }`, "visibility", "visible");
                 map.setLayoutProperty(`layer-${ previousImage }`, "visibility", "none");
-            }, 1000);
+            }, 500);
         });
 
     </script>
