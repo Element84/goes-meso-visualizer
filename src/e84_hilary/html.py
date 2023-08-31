@@ -7,13 +7,45 @@ from jinja2 import Environment, PackageLoader
 from pyproj import CRS, Transformer
 from pystac import ItemCollection
 
+IDS_TO_EXCLUDE = [
+    "OR_ABI-L2-M1-M6_G18_s20232280000292",
+    "OR_ABI-L2-M1-M6_G18_s20232280100292",
+    "OR_ABI-L2-M1-M6_G18_s20232280200292",
+    "OR_ABI-L2-M1-M6_G18_s20232280300292",
+    "OR_ABI-L2-M1-M6_G18_s20232280400292",
+    "OR_ABI-L2-M1-M6_G18_s20232280500292",
+    "OR_ABI-L2-M1-M6_G18_s20232280600292",
+    "OR_ABI-L2-M1-M6_G18_s20232280702264",
+    "OR_ABI-L2-M1-M6_G18_s20232280800293",
+    "OR_ABI-L2-M1-M6_G18_s20232280900293",
+    "OR_ABI-L2-M1-M6_G18_s20232281000293",
+    "OR_ABI-L2-M1-M6_G18_s20232281100293",
+    "OR_ABI-L2-M1-M6_G18_s20232281200293",
+    "OR_ABI-L2-M1-M6_G18_s20232281300293",
+    "OR_ABI-L2-M1-M6_G18_s20232281400293",
+    "OR_ABI-L2-M2-M6_G18_s20232281500564",
+    "OR_ABI-L2-M2-M6_G18_s20232281600564",
+    "OR_ABI-L2-M2-M6_G18_s20232281700564",
+    "OR_ABI-L2-M2-M6_G18_s20232281800564",
+    "OR_ABI-L2-M2-M6_G18_s20232281900564",
+    "OR_ABI-L2-M2-M6_G18_s20232282000564",
+    "OR_ABI-L2-M2-M6_G18_s20232282100564",
+    "OR_ABI-L2-M2-M6_G18_s20232282200565",
+    "OR_ABI-L2-M2-M6_G18_s20232282300565",
+    "OR_ABI-L2-M2-M6_G18_s20232290000565",
+    "OR_ABI-L2-M2-M6_G18_s20232290100565",
+    "OR_ABI-L2-M2-M6_G18_s20232290200565",
+    "OR_ABI-L2-M1-M6_G18_s20232291800295",
+]
+
 
 def item_collection(item_collection: ItemCollection) -> str:
     environment = Environment(loader=PackageLoader("e84_hilary"))
     template = environment.get_template("index.html")
     sources = list()
     layers = list()
-    for i, item in enumerate(item_collection):
+    items = [item for item in item_collection if item.id not in IDS_TO_EXCLUDE]
+    for i, item in enumerate(sorted(items, key=lambda item: item.datetime)):
         with rasterio.open(item.assets["RGB"].href) as dataset:
             bounds = dataset.bounds
             crs = CRS(dataset.crs)
