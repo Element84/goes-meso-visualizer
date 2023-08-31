@@ -10,6 +10,7 @@ pysolar
 pystac-client
 python-dateutil
 rioxarray
+scipy
 shapely
 stac-asset[cli]
 tqdm

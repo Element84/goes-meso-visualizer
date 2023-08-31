@@ -148,6 +148,7 @@ numpy==1.25.2
     #   pysolar
     #   rasterio
     #   rioxarray
+    #   scipy
     #   shapely
     #   snuggs
     #   xarray
@@ -228,6 +229,8 @@ requests==2.31.0
     #   contextily
     #   pystac-client
 rioxarray==0.15.0
+    # via -r requirements.in
+scipy==1.11.2
     # via -r requirements.in
 shapely==2.0.1
     # via
