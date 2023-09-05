@@ -93,7 +93,7 @@
       ],
       "assets": {
         "C01_2km": {
-          "href": "./OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C01.tif",
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C01.tif",
           "type": "image/tiff; application=geotiff; profile=cloud-optimized",
           "title": "Cloud and Moisture Imagery reflectance factor - Band 01",
           "raster:bands": [
@@ -114,7 +114,7 @@
           ]
         },
         "C02_2km": {
-          "href": "./OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C02.tif",
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C02.tif",
           "type": "image/tiff; application=geotiff; profile=cloud-optimized",
           "title": "Cloud and Moisture Imagery reflectance factor - Band 02",
           "raster:bands": [
@@ -135,7 +135,7 @@
           ]
         },
         "C03_2km": {
-          "href": "./OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C03.tif",
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C03.tif",
           "type": "image/tiff; application=geotiff; profile=cloud-optimized",
           "title": "Cloud and Moisture Imagery reflectance factor - Band 03",
           "raster:bands": [
@@ -156,7 +156,7 @@
           ]
         },
         "C13_2km": {
-          "href": "./OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C13.tif",
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C13.tif",
           "type": "image/tiff; application=geotiff; profile=cloud-optimized",
           "title": "Cloud and Moisture Imagery brightness temperature at top of atmosphere - Band 13",
           "raster:bands": [

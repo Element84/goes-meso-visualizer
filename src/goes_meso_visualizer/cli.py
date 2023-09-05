@@ -1,12 +1,14 @@
 import asyncio
 import datetime
 import json
+import shutil
 from pathlib import Path
 from typing import Optional
 
 import click
 import dateutil.parser
 import geojson
+import pystac.utils
 import tqdm
 from pystac import ItemCollection
 from shapely.geometry import LineString, MultiLineString
@@ -134,6 +136,23 @@ def web_png(infile: str, outfile: str) -> None:
     for item in tqdm.tqdm(item_collection):
         items.append(goes_meso_visualizer.web_png.item(item))
     ItemCollection(items).save_object(outfile)
+
+
+@cli.command()
+@click.argument("ITEM_COLLECTION")
+@click.argument("HTML")
+@click.argument("OUTDIR")
+def build(item_collection: str, html: str, outdir: str) -> None:
+    with open(item_collection) as f:
+        data = json.load(f)
+    for item in data["features"]:
+        for asset in item["assets"].values():
+            asset["href"] = pystac.utils.make_relative_href(
+                asset["href"], Path(outdir).absolute(), start_is_dir=True
+            )
+    with open(Path(outdir) / "item-collection.json", "w") as f:
+        json.dump(data, f)
+    shutil.copyfile(html, Path(outdir) / "index.html")
 
 
 if __name__ == "__main__":
