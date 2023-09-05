@@ -52,7 +52,13 @@ def item(item: Item, y: float = 2.2) -> Item:
     with rasterio.open(str(path), "w", **meta) as dst:
         dst.write(rgb)
 
-    item.assets["RGB"] = Asset(
+    item.assets["visual"] = Asset(
         href=str(path), title="RGB", media_type=MediaType.COG, roles=["visual"]
     )
+    del item.assets["C01_2km"]
+    del item.assets["C02_2km"]
+    del item.assets["C03_2km"]
+    del item.assets["C13_2km"]
+    del item.assets["solar_altitude"]
+
     return item

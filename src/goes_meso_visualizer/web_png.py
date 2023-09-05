@@ -8,7 +8,7 @@ from rasterio.warp import Resampling
 
 def item(item: Item) -> Item:
     # https://rasterio.readthedocs.io/en/latest/topics/reproject.html
-    asset = item.assets["RGB"]
+    asset = item.assets["visual"]
     dst_crs = "EPSG:3857"
     stem = "_".join(Path(asset.href).stem.split("_")[0:-1]) + "_RGB"
     path = Path(asset.href).with_stem(stem).with_suffix(".png")
@@ -38,4 +38,6 @@ def item(item: Item) -> Item:
                     resampling=Resampling.cubic,
                 )
     item.assets["web_png"] = Asset(href=str(path), extra_fields={"proj:epsg": 3857})
+    del item.assets["visual"]
+
     return item
