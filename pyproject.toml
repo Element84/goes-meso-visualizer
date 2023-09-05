@@ -1,13 +1,13 @@
 [project]
-name = "e84_hilary"
-version = "0.0.0"                                                                                                   # this package is not meant for release
+name = "goes-meso-visualizer"
+version = "0.0.0"                                                         # this package is not meant for release
 authors = [{ name = "Pete Gadomski", email = "pete.gadomski@gmail.com" }]
-description = "Visualization for Hurricane Hilary, which struck the west coast of the United States in August 2023"
+description = "Visualize GEOS mesoscale data in a browser map"
 readme = "README.md"
 requires-python = "~=3.11.0"
 license = { text = "Apache-2.0" }
 dynamic = ["dependencies", "optional-dependencies"]
-scripts = { e84-hilary = "e84_hilary.cli:cli" }
+scripts = { goes-meso-visualizer = "goes_meso_visualizer.cli:cli" }
 
 [build-system]
 requires = ["setuptools"]

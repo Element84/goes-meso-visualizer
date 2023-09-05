@@ -1,30 +1,30 @@
-# 2023-08-Hilary
+# goes-meso-visualizer
 
-A demonstration of flood analysis after the August 2023 hurricane that struck California.
+Visualize GOES mesoscale data in a browser map.
 
 ## Running
 
 ```shell
-git clone https://github.com/Element84/2023-08-Hilary
-cd 2023-08-Hilary
-pip install .
+pip install git+https://github.com/Element84/goes-meso-visualizer
 ```
 
-Then download and build all of the assets:
+The package comes with an example from the 2023 hurricane that struck the southwestern United States, Hilary:
 
 ```shell
-e84-hilary download-and-build assets
+goes-meso-visualizer build-example output
 ```
 
-To serve the website:
+Use any old http server to serve the output directory:
 
 ```shell
-e84-hilary serve assets
+http-server output
 ```
 
 ## Developing
 
 ```shell
+git clone git@github.com:Element84/goes-meso-visualizer.git
+cd goes-meso-visualizer
 pip install -e '.[dev]'
 pre-commit install
 ```

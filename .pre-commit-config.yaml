@@ -11,6 +11,7 @@ repos:
       - id: mypy
         additional_dependencies:
           - click
+          - pytest-recording
           - types-python-dateutil
   - repo: https://github.com/psf/black
     rev: 23.7.0

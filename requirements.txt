@@ -18,27 +18,17 @@ aioitertools==0.11.0
     # via aiobotocore
 aiosignal==1.3.1
     # via aiohttp
-appnope==0.1.3
-    # via
-    #   ipykernel
-    #   ipython
-asttokens==2.2.1
-    # via stack-data
 async-timeout==4.0.3
     # via aiohttp
 attrs==23.1.0
     # via
     #   aiohttp
-    #   fiona
     #   jsonschema
     #   rasterio
-backcall==0.2.0
-    # via ipython
 botocore==1.31.17
     # via aiobotocore
 certifi==2023.7.22
     # via
-    #   fiona
     #   pyproj
     #   rasterio
     #   requests
@@ -52,147 +42,57 @@ click==8.1.7
     #   click-logging
     #   click-plugins
     #   cligj
-    #   fiona
-    #   mercantile
     #   rasterio
     #   stac-asset
 click-logging==1.0.1
     # via stac-asset
 click-plugins==1.1.1
-    # via
-    #   fiona
-    #   rasterio
+    # via rasterio
 cligj==0.7.2
-    # via
-    #   fiona
-    #   rasterio
-comm==0.1.4
-    # via ipykernel
-contextily==1.3.0
-    # via -r requirements.in
-contourpy==1.1.0
-    # via matplotlib
-cycler==0.11.0
-    # via matplotlib
-debugpy==1.6.7.post1
-    # via ipykernel
-decorator==5.1.1
-    # via ipython
-executing==1.2.0
-    # via stack-data
-fiona==1.9.4.post1
-    # via geopandas
-fonttools==4.42.1
-    # via matplotlib
+    # via rasterio
 frozenlist==1.4.0
     # via
     #   aiohttp
     #   aiosignal
-geographiclib==2.0
-    # via geopy
 geojson==3.0.1
     # via -r requirements.in
-geopandas==0.13.2
-    # via -r requirements.in
-geopy==2.3.0
-    # via contextily
 idna==3.4
     # via
     #   requests
     #   yarl
-ipykernel==6.25.1
-    # via -r requirements.in
-ipython==8.14.0
-    # via ipykernel
-jedi==0.19.0
-    # via ipython
 jinja2==3.1.2
     # via -r requirements.in
 jmespath==1.0.1
     # via botocore
-joblib==1.3.2
-    # via contextily
 jsonschema==4.17.3
     # via pystac
-jupyter-client==8.3.0
-    # via ipykernel
-jupyter-core==5.3.1
-    # via
-    #   ipykernel
-    #   jupyter-client
-kiwisolver==1.4.5
-    # via matplotlib
 markupsafe==2.1.3
     # via jinja2
-matplotlib==3.7.2
-    # via
-    #   -r requirements.in
-    #   contextily
-matplotlib-inline==0.1.6
-    # via
-    #   ipykernel
-    #   ipython
-mercantile==1.2.1
-    # via contextily
 multidict==6.0.4
     # via
     #   aiohttp
     #   yarl
-nest-asyncio==1.5.7
-    # via ipykernel
 numpy==1.25.2
     # via
-    #   contourpy
-    #   matplotlib
+    #   -r requirements.in
     #   pandas
     #   pysolar
     #   rasterio
     #   rioxarray
-    #   scipy
     #   shapely
     #   snuggs
     #   xarray
 packaging==23.1
     # via
-    #   geopandas
-    #   ipykernel
-    #   matplotlib
     #   rioxarray
     #   xarray
-pandas==2.0.3
-    # via
-    #   geopandas
-    #   xarray
-parso==0.8.3
-    # via jedi
-pexpect==4.8.0
-    # via ipython
-pickleshare==0.7.5
-    # via ipython
-pillow==10.0.0
-    # via
-    #   contextily
-    #   matplotlib
-platformdirs==3.10.0
-    # via jupyter-core
-prompt-toolkit==3.0.39
-    # via ipython
-psutil==5.9.5
-    # via ipykernel
-ptyprocess==0.7.0
-    # via pexpect
-pure-eval==0.2.2
-    # via stack-data
-pygments==2.16.1
-    # via ipython
-pyparsing==3.0.9
-    # via
-    #   matplotlib
-    #   snuggs
+pandas==2.1.0
+    # via xarray
+pyparsing==3.1.1
+    # via snuggs
 pyproj==3.6.0
     # via
     #   -r requirements.in
-    #   geopandas
     #   rioxarray
 pyrsistent==0.19.3
     # via jsonschema
@@ -200,87 +100,55 @@ pysolar==0.11
     # via -r requirements.in
 pystac==1.8.3
     # via
+    #   -r requirements.in
     #   pystac-client
     #   stac-asset
-pystac-client==0.7.3
+pystac-client==0.7.5
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
     #   -r requirements.in
     #   botocore
-    #   jupyter-client
-    #   matplotlib
     #   pandas
     #   pystac
     #   pystac-client
     #   stac-asset
-pytz==2023.3
+pytz==2023.3.post1
     # via pandas
-pyzmq==25.1.1
-    # via
-    #   ipykernel
-    #   jupyter-client
 rasterio==1.3.8
     # via
-    #   contextily
+    #   -r requirements.in
     #   rioxarray
 requests==2.31.0
-    # via
-    #   contextily
-    #   pystac-client
+    # via pystac-client
 rioxarray==0.15.0
     # via -r requirements.in
-scipy==1.11.2
-    # via -r requirements.in
 shapely==2.0.1
-    # via
-    #   -r requirements.in
-    #   geopandas
+    # via -r requirements.in
 six==1.16.0
-    # via
-    #   asttokens
-    #   fiona
-    #   python-dateutil
+    # via python-dateutil
 snuggs==1.4.7
     # via rasterio
-stac-asset==0.2.0
+stac-asset==0.2.1
     # via -r requirements.in
-stack-data==0.6.2
-    # via ipython
 tabulate==0.9.0
     # via stac-asset
-tornado==6.3.3
-    # via
-    #   ipykernel
-    #   jupyter-client
 tqdm==4.66.1
     # via
     #   -r requirements.in
     #   stac-asset
-traitlets==5.9.0
-    # via
-    #   comm
-    #   ipykernel
-    #   ipython
-    #   jupyter-client
-    #   jupyter-core
-    #   matplotlib-inline
 tzdata==2023.3
     # via pandas
 urllib3==1.26.16
     # via
     #   botocore
     #   requests
-wcwidth==0.2.6
-    # via prompt-toolkit
 wrapt==1.15.0
     # via aiobotocore
 xarray==2023.8.0
     # via
     #   -r requirements.in
     #   rioxarray
-xyzservices==2023.7.0
-    # via contextily
 yarl==1.9.2
     # via
     #   aiohttp
