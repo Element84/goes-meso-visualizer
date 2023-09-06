@@ -45,12 +45,18 @@
                         type: "image",
                         url: item.assets["web_png"]["href"],
                         coordinates: [
-                            [bbox[0], bbox[1]],
-                            [bbox[2], bbox[1]],
-                            [bbox[2], bbox[3]],
                             [bbox[0], bbox[3]],
+                            [bbox[2], bbox[3]],
+                            [bbox[2], bbox[1]],
+                            [bbox[0], bbox[1]],
                         ]
                     });
+                    console.log([
+                        [bbox[0], bbox[3]],
+                        [bbox[2], bbox[3]],
+                        [bbox[2], bbox[1]],
+                        [bbox[0], bbox[1]],
+                    ]);
                     map.addLayer({
                         id: item["id"] + "-layer",
                         'type': 'raster',
@@ -68,7 +74,7 @@
                     currentLayer = (currentLayer + 1) % layers.length;
                     map.setLayoutProperty(layers[currentLayer], "visibility", "visible");
                     map.setLayoutProperty(layers[previousLayer], "visibility", "none");
-                }, 500);
+                }, 100);
             });
         })
     </script>
