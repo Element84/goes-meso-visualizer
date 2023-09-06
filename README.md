@@ -8,16 +8,13 @@ Visualize GOES mesoscale data in a browser map.
 pip install git+https://github.com/Element84/goes-meso-visualizer
 ```
 
-The package comes with an example from the 2023 hurricane that struck the southwestern United States, Hilary:
+This installs the `goes-meso-visualizer` command-line executable (CLI), which contains all the commands to build visualizations.
+Run `goes-meso-visualizer --help` to see what's available.
+We provide an example Makefile to build visualization from the 2023 hurricane that struck the southwestern United States, Hilary:
 
 ```shell
-goes-meso-visualizer build-example output
-```
-
-Use any old http server to serve the output directory:
-
-```shell
-http-server output
+make example  # this will take a few minutes
+make serve-example
 ```
 
 ## Developing

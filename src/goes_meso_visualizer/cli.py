@@ -145,12 +145,19 @@ def web_png(infile: str, outfile: str) -> None:
 def build(item_collection: str, html: str, outdir: str) -> None:
     with open(item_collection) as f:
         data = json.load(f)
+    outdir_path = Path(outdir).absolute()
     for item in data["features"]:
         for asset in item["assets"].values():
-            asset["href"] = pystac.utils.make_relative_href(
-                asset["href"], Path(outdir).absolute(), start_is_dir=True
+            relative_href = pystac.utils.make_relative_href(
+                asset["href"],
+                Path(item_collection).parent.absolute(),
+                start_is_dir=True,
             )
-    with open(Path(outdir) / "item-collection.json", "w") as f:
+            path = outdir_path / relative_href
+            path.parent.mkdir(exist_ok=True)
+            shutil.copyfile(asset["href"], path)
+            asset["href"] = relative_href
+    with open(outdir_path / "item-collection.json", "w") as f:
         json.dump(data, f)
     shutil.copyfile(html, Path(outdir) / "index.html")
 
