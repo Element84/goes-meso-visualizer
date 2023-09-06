@@ -16,5 +16,5 @@ repos:
   - repo: https://github.com/psf/black
     rev: 23.7.0
     hooks:
-      - id: black-jupyter
+      - id: black
         language_version: python3.11

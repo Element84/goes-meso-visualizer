@@ -1,4 +1,4 @@
-black[jupyter]
+black
 mypy
 pip-tools
 pre-commit
