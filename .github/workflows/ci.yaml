@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
+      - name: Update pip
+        run: pip install -U pip
       - name: Install with development dependencies
         run: pip install .[dev]
       - name: Check with pre-commit
