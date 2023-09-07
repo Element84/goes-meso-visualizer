@@ -140,9 +140,10 @@ def web_png(infile: str, outfile: str) -> None:
 
 @cli.command()
 @click.argument("ITEM_COLLECTION")
+@click.argument("GEOJSON")
 @click.argument("HTML")
 @click.argument("OUTDIR")
-def build(item_collection: str, html: str, outdir: str) -> None:
+def build(item_collection: str, geojson: str, html: str, outdir: str) -> None:
     outdir_path = Path(outdir).absolute()
     if outdir_path.exists():
         shutil.rmtree(outdir_path)
@@ -163,6 +164,7 @@ def build(item_collection: str, html: str, outdir: str) -> None:
     with open(outdir_path / "item-collection.json", "w") as f:
         json.dump(data, f)
     shutil.copyfile(html, Path(outdir) / "index.html")
+    shutil.copyfile(geojson, Path(outdir) / "geometry.json")
 
 
 if __name__ == "__main__":
