@@ -21,8 +21,9 @@ build/downloaded.json: build/search.json
 	goes-meso-visualizer download $< $@
 
 build/search.json:
+	@mkdir -p $(dir $@)
 	goes-meso-visualizer search \
 		src/goes_meso_visualizer/ep092023_best_track.json \
 		--start 2023-08-16 \
 		--end 2023-08-21 \
-		--max-items 20
+		--max-items 1 > $@

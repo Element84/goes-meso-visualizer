@@ -9,6 +9,7 @@ pystac-client
 python-dateutil
 rasterio
 rioxarray
+scipy
 shapely
 stac-asset[cli]
 tqdm
