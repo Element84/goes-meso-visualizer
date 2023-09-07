@@ -1,6 +1,9 @@
 # goes-meso-visualizer
 
+![Hilary](./img/hilary.gif)
+
 Visualize GOES mesoscale data in a browser map.
+A live demo is available at <http://e84-gadomski-hilary-demo.s3-website-us-west-2.amazonaws.com/>.
 
 ## Running
 
