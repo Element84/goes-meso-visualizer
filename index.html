@@ -25,19 +25,24 @@
 <body>
     <div id="map"></div>
     <script>
-        const map = new maplibregl.Map({
-            container: 'map',
-            style:
-                'https://api.maptiler.com/maps/streets/style.json?key=wxwXy6rWFqQVfA26FFiS',
-            zoom: 5,
-            maxZoom: 5,
-            minZoom: 4,
-            center: [-113, 40]
-        });
-        map.on("load", () => {
-            let layers = [];
-            let currentLayer = 0;
-            fetch("./item-collection.json").then((response) => response.json()).then((item_collection) => {
+        fetch("./item-collection.json").then((response) => response.json()).then((item_collection) => {
+            const bbox = item_collection["features"][0]["bbox"];
+            const center = [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2];
+
+            const map = new maplibregl.Map({
+                container: 'map',
+                style:
+                    'https://api.maptiler.com/maps/streets/style.json?key=wxwXy6rWFqQVfA26FFiS',
+                zoom: 4,
+                maxZoom: 5,
+                minZoom: 2,
+                center: center,
+            });
+
+            map.on("load", () => {
+                let layers = [];
+                let currentLayer = 0;
+
                 for (let i = 0; i < item_collection["features"].length; i++) {
                     let item = item_collection["features"][i];
                     let bbox = item["bbox"];
@@ -69,8 +74,8 @@
                     map.setLayoutProperty(layers[currentLayer], "visibility", "visible");
                     map.setLayoutProperty(layers[previousLayer], "visibility", "none");
                 }, 100);
-            });
-        })
+            })
+        });
     </script>
 </body>
 

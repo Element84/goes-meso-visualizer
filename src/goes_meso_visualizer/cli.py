@@ -143,9 +143,12 @@ def web_png(infile: str, outfile: str) -> None:
 @click.argument("HTML")
 @click.argument("OUTDIR")
 def build(item_collection: str, html: str, outdir: str) -> None:
+    outdir_path = Path(outdir).absolute()
+    if outdir_path.exists():
+        shutil.rmtree(outdir_path)
+    outdir_path.mkdir(parents=True)
     with open(item_collection) as f:
         data = json.load(f)
-    outdir_path = Path(outdir).absolute()
     for item in data["features"]:
         for asset in item["assets"].values():
             relative_href = pystac.utils.make_relative_href(
