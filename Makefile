@@ -8,6 +8,10 @@ serve-example:
 	http-server site
 .PHONY: serve-example
 
+sync-example: example
+	aws s3 sync site s3://e84-gadomski-hilary-demo
+.PHONY: sync examplte
+
 build/web-png.json: build/colorized.json
 	goes-meso-visualizer web-png $< $@
 
