@@ -25,5 +25,4 @@ build/search.json:
 	goes-meso-visualizer search \
 		src/goes_meso_visualizer/ep092023_best_track.json \
 		--start 2023-08-16 \
-		--end 2023-08-21 \
-		--max-items 1 > $@
+		--end 2023-08-21  > $@
