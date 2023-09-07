@@ -24,8 +24,10 @@ def item(item: Item, y: float = 2.2) -> Item:
         + 0.45 * dataset.sel(band="blue")
     ).assign_coords(band="green")
     rgb = xarray.concat([dataset, green], dim="band").sel(band=["red", "green", "blue"])
-    rgb = rgb / rgb.max(dim=["band", "y", "x"])
-    rgb = numpy.clip(rgb ** (1 / y), 0, 1)
+    rgb_max = rgb.max(dim=["band", "y", "x"])
+    if rgb_max > 0:
+        rgb = rgb / rgb.max(dim=["band", "y", "x"])
+        rgb = numpy.clip(rgb ** (1 / y), 0, 1)
 
     window_ir = rioxarray.open_rasterio(item.assets["C13_2km"].href)
     window_ir = 1 - window_ir / window_ir.max(dim=["band", "x", "y"])
