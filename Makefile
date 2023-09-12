@@ -1,6 +1,6 @@
 example: build/web-png.json
 	@mkdir -p site
-	goes-meso-visualizer build build/web-png.json src/goes_meso_visualizer/ep092023_best_track.json index.html site
+	goes-meso-visualizer build build/web-png.json src/goes_meso_visualizer/ep092023_best_track.json site
 .PHONY: example
 
 serve-example:

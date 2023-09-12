@@ -10,6 +10,7 @@ import dateutil.parser
 import geojson
 import pystac.utils
 import tqdm
+from jinja2 import Environment, PackageLoader
 from pystac import ItemCollection
 from shapely.geometry import LineString, MultiLineString
 from stac_asset import (  # We use the "private" _cli module to get progress reporting
@@ -141,9 +142,8 @@ def web_png(infile: str, outfile: str) -> None:
 @cli.command()
 @click.argument("ITEM_COLLECTION")
 @click.argument("GEOJSON")
-@click.argument("HTML")
 @click.argument("OUTDIR")
-def build(item_collection: str, geojson: str, html: str, outdir: str) -> None:
+def build(item_collection: str, geojson: str, outdir: str) -> None:
     outdir_path = Path(outdir).absolute()
     if outdir_path.exists():
         shutil.rmtree(outdir_path)
@@ -163,7 +163,11 @@ def build(item_collection: str, geojson: str, html: str, outdir: str) -> None:
             asset["href"] = relative_href
     with open(outdir_path / "item-collection.json", "w") as f:
         json.dump(data, f)
-    shutil.copyfile(html, Path(outdir) / "index.html")
+
+    environment = Environment(loader=PackageLoader("goes_meso_visualizer"))
+    template = environment.get_template("index.html")
+    with open(Path(outdir) / "index.html", "w") as f:
+        f.write(template.render())
     shutil.copyfile(geojson, Path(outdir) / "geometry.json")
 
 

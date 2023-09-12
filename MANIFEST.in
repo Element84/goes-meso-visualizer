@@ -1,1 +1,1 @@
-include src/goes_meso_visualizer/*.json
+include src/goes_meso_visualizer/*.json src/goes_meso_visualizer/*.html
