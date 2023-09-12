@@ -8,7 +8,9 @@ A live demo is available at <http://e84-gadomski-hilary-demo.s3-website-us-west-
 ## Running
 
 ```shell
-pip install git+https://github.com/Element84/goes-meso-visualizer
+git clone git@github.com:Element84/goes-meso-visualizer.git
+cd goes-meso-visualizer
+pip install .
 ```
 
 This installs the `goes-meso-visualizer` command-line executable (CLI), which contains all the commands to build visualizations.
@@ -26,8 +28,6 @@ Then, navigate to <http://localhost:8080/hilary> or <http://localhost:8080/lee>.
 ## Developing
 
 ```shell
-git clone git@github.com:Element84/goes-meso-visualizer.git
-cd goes-meso-visualizer
 pip install -e '.[dev]'
 pre-commit install
 ```
