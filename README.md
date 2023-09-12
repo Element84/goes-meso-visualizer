@@ -3,7 +3,10 @@
 ![Hilary](./img/hilary.gif)
 
 Visualize GOES mesoscale data in a browser map.
-A live demo is available at <http://e84-gadomski-hilary-demo.s3-website-us-west-2.amazonaws.com/>.
+Live demos are available:
+
+- [Hurricane Hilary](https://demos.dev.element84.com/goes-meso-visualizer/hilary/)
+- [Hurricane Lee](https://demos.dev.element84.com/goes-meso-visualizer/lee/)
 
 ## Running
 
