@@ -1,0 +1,198 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "id": "OR_ABI-L2-M1-M6_G18_s20232290300294",
+      "properties": {
+        "datetime": "2023-08-17T03:00:29.400000Z",
+        "platform": "GOES-18",
+        "goes:mode": "6",
+        "proj:bbox": [
+          2686385.0664458275,
+          1902814.4060997292,
+          3686389.7068741103,
+          902809.7656714462
+        ],
+        "proj:epsg": null,
+        "proj:wkt2": "PROJCRS[\"undefined\",BASEGEOGCRS[\"undefined\",DATUM[\"undefined\",ELLIPSOID[\"GRS 1980(IUGG, 1980)\",6378137,298.257222101,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Geostationary Satellite (Sweep X)\"],PARAMETER[\"Satellite height\",35786023,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],PARAMETER[\"Latitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-137,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+        "proj:shape": [
+          500,
+          500
+        ],
+        "instruments": [
+          "ABI"
+        ],
+        "proj:transform": [
+          2004.0173154875406,
+          0,
+          2685383.057788084,
+          0,
+          -2004.017315487541,
+          1903816.414757473
+        ],
+        "goes:image-type": "MESOSCALE",
+        "processing:software": {
+          "stactools-goes": "0.1.6"
+        },
+        "goes:processing-level": "L2",
+        "goes:system-environment": "OR",
+        "goes:mesoscale-image-number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.85260845776706,
+              17.98372874840107
+            ],
+            [
+              -111.22110323704298,
+              8.354119143018787
+            ],
+            [
+              -99.47017532543549,
+              8.510977083424233
+            ],
+            [
+              -97.1007814639948,
+              18.365576185180565
+            ],
+            [
+              -109.85260845776706,
+              17.98372874840107
+            ]
+          ]
+        ]
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/goes-cmi",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/goes-cmi",
+          "type": "application/json"
+        },
+        {
+          "rel": "root",
+          "href": "https://planetarycomputer.microsoft.com/api/stac/v1",
+          "type": "application/json",
+          "title": "Microsoft Planetary Computer STAC API"
+        },
+        {
+          "rel": "preview",
+          "href": "https://planetarycomputer.microsoft.com/api/data/v1/item/map?collection=goes-cmi&item=OR_ABI-L2-M1-M6_G18_s20232290300294",
+          "type": "text/html",
+          "title": "Map of item"
+        }
+      ],
+      "assets": {
+        "C01_2km": {
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C01.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud and Moisture Imagery reflectance factor - Band 01",
+          "raster:bands": [
+            {
+              "nodata": -1,
+              "data_type": "int16",
+              "spatial_resolution": 2000
+            }
+          ],
+          "goes:end_observation_time": "2023-08-17T03:00:35.700000Z",
+          "eo:bands": [
+            {
+              "name": "ABI Band 1",
+              "common_name": "blue",
+              "description": "Daytime aerosol over land, coastal water mapping",
+              "center_wavelength": 0.47
+            }
+          ]
+        },
+        "C02_2km": {
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C02.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud and Moisture Imagery reflectance factor - Band 02",
+          "raster:bands": [
+            {
+              "nodata": -1,
+              "data_type": "int16",
+              "spatial_resolution": 2000
+            }
+          ],
+          "goes:end_observation_time": "2023-08-17T03:00:35.700000Z",
+          "eo:bands": [
+            {
+              "name": "ABI Band 2",
+              "common_name": "red",
+              "description": "Daytime clouds, fog, insolation, winds",
+              "center_wavelength": 0.64
+            }
+          ]
+        },
+        "C03_2km": {
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C03.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud and Moisture Imagery reflectance factor - Band 03",
+          "raster:bands": [
+            {
+              "nodata": -1,
+              "data_type": "int16",
+              "spatial_resolution": 2000
+            }
+          ],
+          "goes:end_observation_time": "2023-08-17T03:00:35.700000Z",
+          "eo:bands": [
+            {
+              "name": "ABI Band 3",
+              "common_name": "nir09",
+              "description": "Daytime vegetation, burn scar, aerosol over water, winds",
+              "center_wavelength": 0.87
+            }
+          ]
+        },
+        "C13_2km": {
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_C13.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "Cloud and Moisture Imagery brightness temperature at top of atmosphere - Band 13",
+          "raster:bands": [
+            {
+              "nodata": -1,
+              "data_type": "int16",
+              "spatial_resolution": 2000
+            }
+          ],
+          "goes:end_observation_time": "2023-08-17T03:00:35.700000Z",
+          "eo:bands": [
+            {
+              "name": "ABI Band 13",
+              "description": "Surface and clouds",
+              "center_wavelength": 10.33
+            }
+          ]
+        },
+        "solar_altitude": {
+          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_SOLAR_ALTITUDE.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+        }
+      },
+      "bbox": [
+        -111.23267364501953,
+        8.344618797302246,
+        -97.08267211914062,
+        18.376373291015625
+      ],
+      "stac_extensions": [
+        "https://stac-extensions.github.io/processing/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+      ],
+      "collection": "goes-cmi"
+    }
+  ]
+}

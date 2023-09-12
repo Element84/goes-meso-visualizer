@@ -18,8 +18,19 @@ def goes(
 ) -> ItemCollection:
     """Search the Planetary Computer's GOES collection for the assets we need.
 
+    For now, hardcoded to hourly.
+
     We can't use intersects in the search itself because that breaks the
     Planetary Computer.
+
+    Args:
+        intersects: The geographic area to search
+        start: The start datetime
+        end: The end datetime
+        max_items: The maximum number of items to find.
+
+    Returns:
+        ItemCollection: The items
     """
     planetary_computer = Client.open(
         "https://planetarycomputer.microsoft.com/api/stac/v1"

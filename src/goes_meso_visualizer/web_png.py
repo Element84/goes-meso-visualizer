@@ -5,10 +5,13 @@ import rasterio.warp
 from pystac import Asset, Item
 from rasterio.warp import Resampling
 
+from .constants import VISUAL_KEY, WEB_PNG_KEY
+
 
 def item(item: Item) -> Item:
+    """Creates a Web Mercator PNG fro a visual asset"""
     # https://rasterio.readthedocs.io/en/latest/topics/reproject.html
-    asset = item.assets["visual"]
+    asset = item.assets[VISUAL_KEY]
     dst_crs = "EPSG:3857"
     stem = "_".join(Path(asset.href).stem.split("_")[0:-1]) + "_RGB"
     path = Path(asset.href).with_stem(stem).with_suffix(".png")
@@ -37,7 +40,7 @@ def item(item: Item) -> Item:
                     dst_crs=dst_crs,
                     resampling=Resampling.cubic,
                 )
-    item.assets["web_png"] = Asset(href=str(path), extra_fields={"proj:epsg": 3857})
-    del item.assets["visual"]
+    item.assets[WEB_PNG_KEY] = Asset(href=str(path), extra_fields={"proj:epsg": 3857})
+    del item.assets[VISUAL_KEY]
 
     return item

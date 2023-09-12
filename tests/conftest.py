@@ -1,8 +1,14 @@
 import os.path
+from pathlib import Path
 from typing import Any
 
 import pytest
 from pytest import Config, FixtureRequest, Parser
+
+
+@pytest.fixture
+def data_path() -> Path:
+    return Path(__file__).parent / "data"
 
 
 @pytest.fixture(scope="module")
