@@ -93,7 +93,7 @@
       ],
       "assets": {
         "visual": {
-          "href": "/Users/gadomski/Code/Element84/goes-meso-visualizer/tests/data/OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_RGB.tif",
+          "href": "./OR_ABI-L2-M1-M6_G18_s20232290300294/OR_ABI-L2-MCMIPM1-M6_G18_s20232290300294_e20232290300357_c20232290300428_CMI_RGB.tif",
           "type": "image/tiff; application=geotiff; profile=cloud-optimized",
           "title": "Visual",
           "roles": [

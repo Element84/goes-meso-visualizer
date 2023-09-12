@@ -1,14 +1,28 @@
 import os.path
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
+import pystac.utils
 import pytest
+from pystac import ItemCollection
 from pytest import Config, FixtureRequest, Parser
 
 
 @pytest.fixture
-def data_path() -> Path:
-    return Path(__file__).parent / "data"
+def load_item_collection() -> Callable[[str], ItemCollection]:
+    """Needed to get absolute paths :headdesk:"""
+
+    def f(file_name: str) -> ItemCollection:
+        href = str(Path(__file__).parent / "data" / file_name)
+        item_collection = ItemCollection.from_file(href)
+        for item in item_collection:
+            for asset in item.assets.values():
+                asset.href = pystac.utils.make_absolute_href(
+                    asset.href, href, start_is_dir=False
+                )
+        return item_collection
+
+    return f
 
 
 @pytest.fixture(scope="module")

@@ -1,11 +1,11 @@
-from pathlib import Path
+from typing import Callable
 
 import goes_meso_visualizer.colorize
 from pystac import ItemCollection
 
 
-def test_item(data_path: Path) -> None:
-    item_collection = ItemCollection.from_file(str(data_path / "solarize.json"))
+def test_item(load_item_collection: Callable[[str], ItemCollection]) -> None:
+    item_collection = load_item_collection("solarize.json")
     item = goes_meso_visualizer.colorize.item(item_collection[0])
     assert "visual" in item.assets
     assert "C01_2km" not in item.assets
