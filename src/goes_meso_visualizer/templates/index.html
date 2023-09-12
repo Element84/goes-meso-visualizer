@@ -31,10 +31,10 @@
                 let max_longitude = -180;
                 let min_latitude = 90;
                 let max_latitude = -90;
-                for (let i = 0; i < geometry["features"].length; i++) {
-                    let feature = geometry["features"][i];
-                    for (let j = 0; j < feature["geometry"]["coordinates"].length; j++) {
-                        let coordinate = feature["geometry"]["coordinates"][j];
+                for (let i = 0; i < geometry["coordinates"].length; i++) {
+                    let coordinates = geometry["coordinates"][i];
+                    for (let j = 0; j < coordinates.length; j++) {
+                        let coordinate = coordinates[j];
                         if (coordinate[0] < min_longitude) {
                             min_longitude = coordinate[0];
                         }

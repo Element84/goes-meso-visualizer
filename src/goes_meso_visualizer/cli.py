@@ -3,7 +3,7 @@ import datetime
 import json
 import shutil
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 import click
 import dateutil.parser
@@ -33,23 +33,23 @@ def cli() -> None:
 @click.option("-s", "--start")
 @click.option("-e", "--end")
 @click.option("-m", "--max-items", type=int)
+@click.option("-x", "--exclude")
 def search(
     infile: str,
     start: Optional[str],
     end: Optional[str],
     max_items: Optional[int],
+    exclude: List[str],
 ) -> None:
-    """Search for the required assets."""
+    """Search for items that intersect the geometry and are in the time window."""
     with open(infile) as f:
         intersects = geojson.load(f)
     if intersects["type"] == "FeatureCollection":
         if intersects["features"][0]["geometry"]["type"] == "LineString":
             intersects = MultiLineString(
                 [
-                    LineString(
-                        line_string["geometry"]["coordinates"][0]
-                        for line_string in intersects["features"]
-                    )
+                    LineString(line_string["geometry"]["coordinates"])
+                    for line_string in intersects["features"]
                 ]
             )
         else:
@@ -73,6 +73,7 @@ def search(
         start=start_datetime,
         end=end_datetime,
         max_items=max_items,
+        exclude=exclude,
     )
     print(json.dumps(item_collection.to_dict(transform_hrefs=False)))
 
@@ -141,9 +142,10 @@ def web_png(infile: str, outfile: str) -> None:
 
 @cli.command()
 @click.argument("ITEM_COLLECTION")
-@click.argument("GEOJSON")
+@click.argument("SEARCH")
 @click.argument("OUTDIR")
-def build(item_collection: str, geojson: str, outdir: str) -> None:
+def build(item_collection: str, search: str, outdir: str) -> None:
+    """Build the site."""
     outdir_path = Path(outdir).absolute()
     if outdir_path.exists():
         shutil.rmtree(outdir_path)
@@ -168,7 +170,12 @@ def build(item_collection: str, geojson: str, outdir: str) -> None:
     template = environment.get_template("index.html")
     with open(Path(outdir) / "index.html", "w") as f:
         f.write(template.render())
-    shutil.copyfile(geojson, Path(outdir) / "geometry.json")
+
+    with open(search) as f:
+        search_data = json.load(f)
+    intersects = search_data["intersects"]
+    with open(Path(outdir) / "geometry.json", "w") as f:
+        json.dump(intersects, f)
 
 
 if __name__ == "__main__":

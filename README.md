@@ -13,12 +13,15 @@ pip install git+https://github.com/Element84/goes-meso-visualizer
 
 This installs the `goes-meso-visualizer` command-line executable (CLI), which contains all the commands to build visualizations.
 Run `goes-meso-visualizer --help` to see what's available.
-We provide an example Makefile to build visualization from the 2023 hurricane that struck the southwestern United States, Hilary:
+We provide an example Makefile to build visualization from two 2023 hurricanes:
 
 ```shell
-make example  # this will take a few minutes
-make serve-example
+make site
+npm install -g http-server  # if you don't have a preferred http server
+http-server site
 ```
+
+Then, navigate to <http://localhost:8080/hilary> or <http://localhost:8080/lee>.
 
 ## Developing
 

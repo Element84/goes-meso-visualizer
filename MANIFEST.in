@@ -1,1 +1,1 @@
-include src/goes_meso_visualizer/*.json src/goes_meso_visualizer/*.html
+include src/goes_meso_visualizer/tracks/*.json src/goes_meso_visualizer/templates/*.html

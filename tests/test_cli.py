@@ -17,7 +17,13 @@ def test_search() -> None:
         cli,
         [
             "search",
-            str(ROOT / "src" / "goes_meso_visualizer" / "ep092023_best_track.json"),
+            str(
+                ROOT
+                / "src"
+                / "goes_meso_visualizer"
+                / "tracks"
+                / "ep092023_best_track.json"
+            ),
             "--max-items",
             "1",
             "--start",

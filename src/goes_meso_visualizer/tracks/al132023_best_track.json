@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "AL132023_lin",
+"features": [
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "DB", "SS": 0.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -13.5, 9.5 ], [ -14.8, 9.5 ], [ -16.3, 9.5 ], [ -17.8, 9.5 ], [ -19.1, 9.5 ], [ -20.8, 10.0 ], [ -23.3, 10.3 ], [ -25.4, 10.4 ], [ -27.0, 10.5 ], [ -28.3, 10.5 ], [ -29.6, 10.8 ], [ -31.5, 11.0 ], [ -33.2, 11.2 ], [ -34.9, 11.2 ], [ -36.2, 11.2 ], [ -37.5, 11.5 ], [ -39.6, 12.2 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "TD", "SS": 0.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -39.6, 12.2 ], [ -41.1, 12.9 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "TS", "SS": 0.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -41.1, 12.9 ], [ -42.4, 13.3 ], [ -43.8, 13.6 ], [ -44.9, 13.9 ], [ -46.1, 14.7 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 1.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -46.1, 14.7 ], [ -47.1, 15.2 ], [ -48.1, 15.7 ], [ -49.4, 16.1 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 2.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -49.4, 16.1 ], [ -50.7, 16.6 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 3.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -50.7, 16.6 ], [ -51.8, 17.0 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 4.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -51.8, 17.0 ], [ -53.0, 17.5 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 5.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -53.0, 17.5 ], [ -54.1, 17.9 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 4.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -54.1, 17.9 ], [ -55.0, 18.5 ], [ -56.0, 19.0 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 3.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -56.0, 19.0 ], [ -57.0, 19.4 ], [ -57.9, 20.0 ], [ -58.8, 20.5 ], [ -59.5, 20.8 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 2.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -59.5, 20.8 ], [ -60.2, 21.2 ], [ -60.8, 21.5 ], [ -61.4, 21.9 ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 13.0, "STORMTYPE": "HU", "SS": 2.0 }, "geometry": { "type": "LineString", "coordinates": [ [ -61.4, 21.9 ], [ -61.9, 22.3 ], [ -62.5, 22.8 ], [ -63.2, 23.3 ], [ -63.9, 23.5 ], [ -64.5, 23.8 ], [ -65.1, 23.9 ] ] } }
+]
+}

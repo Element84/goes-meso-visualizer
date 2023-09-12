@@ -1,6 +1,7 @@
 import datetime
-from typing import Optional
+from typing import List, Optional
 
+import pystac.utils
 import shapely.geometry
 import tqdm
 from dateutil import rrule
@@ -15,6 +16,7 @@ def goes(
     start: datetime.datetime,
     end: datetime.datetime,
     max_items: Optional[int] = None,
+    exclude: Optional[List[str]] = None,
 ) -> ItemCollection:
     """Search the Planetary Computer's GOES collection for the assets we need.
 
@@ -28,6 +30,7 @@ def goes(
         start: The start datetime
         end: The end datetime
         max_items: The maximum number of items to find.
+        exclude: Item ids to exclude from the final results
 
     Returns:
         ItemCollection: The items
@@ -47,8 +50,16 @@ def goes(
         )
         for item in search.items():
             if shape.intersects(shapely.geometry.shape(item.geometry)):
-                items.append(item)
+                if exclude is None or item.id not in exclude:
+                    items.append(item)
                 break
         if max_items and len(items) >= max_items:
             break
-    return ItemCollection(items)
+    return ItemCollection(
+        items,
+        extra_fields={
+            "intersects": shapely.geometry.mapping(shape),
+            "start": pystac.utils.datetime_to_str(start),
+            "end": pystac.utils.datetime_to_str(end),
+        },
+    )
