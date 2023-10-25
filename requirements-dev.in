@@ -1,3 +1,4 @@
+-r requirements.in
 black
 mypy
 pip-tools
