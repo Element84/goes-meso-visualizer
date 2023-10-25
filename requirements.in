@@ -13,4 +13,5 @@ scipy
 shapely
 stac-asset[cli]
 tqdm
+urllib3 < 2
 xarray
